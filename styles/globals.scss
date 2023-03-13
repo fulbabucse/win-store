@@ -23,6 +23,46 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.navbar_container {
+  background-color: #03484d;
+  padding: 10px 61px;
+
+  .top_navbar {
+    .top_nav_left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .search_field {
+        display: flex;
+        align-items: center;
+
+        .input_field {
+          padding: 7px 10px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .search_button {
+          background-color: #b6b6b6;
+          border: 0;
+          padding: 4px 7px;
+          cursor: pointer;
+
+          .icon {
+            font-size: 22px;
+          }
+        }
+      }
+    }
+
+    .top_nav_right {
+    }
+  }
+}
+
 .hero_container {
   .banner {
     position: relative;
