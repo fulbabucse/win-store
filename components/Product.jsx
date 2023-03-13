@@ -1,8 +1,9 @@
 import Image from "next/image";
 import React from "react";
+import defaultThumb from "../assets/default_thumb.jpg";
 
 const Product = ({ product }) => {
-  const { id, title, category, price, rating, image, description } = product;
+  const { id, title, category, price, image } = product;
   return (
     <div className="product_container">
       <div className="product_top_details">
@@ -10,7 +11,12 @@ const Product = ({ product }) => {
         <h3>{title.length > 22 ? `${title?.slice(0, 22)}..` : title}</h3>
       </div>
       <div className="product_thumb">
-        <Image src={image} alt={title} width={100} height={130} />
+        <Image
+          src={image || defaultThumb}
+          alt={title}
+          width={100}
+          height={130}
+        />
       </div>
       <div className="product_button_details">
         <h4>
