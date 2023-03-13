@@ -1,4 +1,5 @@
 import BestDeals from "@/components/BestDeals";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import NewArrival from "@/components/NewArrival";
 import Head from "next/head";
@@ -16,6 +17,7 @@ export default function Home({ categories, products }) {
         <Hero categories={categories} />
         <NewArrival products={products} />
         <BestDeals categories={categories} />
+        <Footer />
       </main>
     </>
   );

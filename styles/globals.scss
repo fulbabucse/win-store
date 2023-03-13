@@ -761,6 +761,127 @@ body {
   }
 }
 
+.footer_container {
+  .footer_top {
+    background-color: #393939;
+    padding: 30px 61px;
+    color: $white_color;
+    margin-top: 61px;
+
+    .footer_nav {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      place-items: center;
+      gap: 20px;
+
+      .company_info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .contact_number {
+          a {
+            color: $white_color;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 17px;
+            text-decoration: none;
+          }
+        }
+
+        .title {
+          color: $primary_color;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 17px;
+        }
+
+        a {
+          color: $white_color;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 17px;
+          text-decoration: none;
+        }
+
+        .social_icons {
+          display: flex;
+          gap: 10px;
+
+          .icon {
+            font-size: 25px;
+            cursor: pointer;
+
+            &:hover {
+              color: $secondary_color;
+              transition: all 0.3s;
+            }
+          }
+        }
+      }
+    }
+
+    .payment_methods {
+      display: flex;
+      justify-content: end;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+    }
+  }
+
+  .footer_bottom {
+    background-color: #161616;
+    padding: 0 61px;
+    height: 59px;
+    display: flex;
+    align-items: center;
+
+    p {
+      color: $white_color;
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+}
+
+.footer_title {
+  color: $primary_color;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.footer_link {
+  margin-top: 15px;
+
+  li {
+    list-style-type: none;
+
+    a {
+      text-decoration: none;
+      color: $white_color;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 24px;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        color: $secondary_color;
+        border-bottom: 1px solid $secondary_color;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}
+
 .grid {
   margin-top: 20px;
   display: grid;
