@@ -227,13 +227,6 @@ body {
       color: $black_color;
     }
   }
-
-  .arrival_grid {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
-  }
 }
 
 .product_container {
@@ -301,38 +294,259 @@ body {
 .best_deals_container {
   margin-top: 65px;
   padding: 0 61px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
-  .title {
-    color: $secondary_color;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 34px;
-    text-transform: capitalize;
+  .category_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    span {
-      color: $black_color;
+    .title {
+      color: $secondary_color;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 34px;
+      text-transform: capitalize;
+
+      span {
+        color: $black_color;
+      }
     }
-  }
 
-  .category {
-    ul {
-      display: flex;
-      gap: 25px;
+    .category {
+      ul {
+        display: flex;
+        gap: 25px;
 
-      li {
-        list-style: none;
+        li {
+          list-style: none;
 
-        a {
-          color: $black_color;
-          font-size: 19px;
-          text-decoration: none;
-          text-transform: capitalize;
+          button {
+            font-size: 18px;
+            color: $black_color;
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-transform: capitalize;
+            border-bottom: 2px solid transparent;
+          }
         }
       }
     }
+  }
+
+  .display_category {
+    margin-top: 10px;
+
+    .special_offer_grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+
+      .first_item {
+        position: relative;
+        border: 1px solid #dedede;
+        padding: 15px 20px;
+
+        .special_discount {
+          h1 {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-style: normal;
+            font-weight: 400;
+
+            p {
+              color: #d22727;
+            }
+            span {
+              color: $black_color;
+            }
+          }
+
+          .circle {
+            position: absolute;
+            display: grid;
+            right: 0;
+            top: 15px;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(
+              90deg,
+              rgba(248, 72, 61, 1) 53%,
+              rgba(225, 41, 111, 1) 100%
+            );
+            border-radius: 100%;
+            display: grid;
+            place-items: center;
+
+            h1 {
+              color: $white_color;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 30px;
+            }
+          }
+        }
+
+        .offer_thumb {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .offer_details {
+          .offer_title {
+            color: $black_color;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+          }
+
+          .offer_price {
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+            display: flex;
+            gap: 24px;
+
+            span {
+              font-size: 18px;
+              color: #d22727;
+            }
+
+            del {
+              font-size: 14px;
+            }
+          }
+          p {
+            color: $primary_color;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+          }
+        }
+      }
+
+      .second_item {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+
+        .special_item_one {
+          border: 1px solid #dedede;
+          padding: 15px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+
+          .left {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            h4 {
+              display: flex;
+              flex-direction: column;
+
+              span {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                color: $secondary_color;
+              }
+
+              del {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                color: $black_color;
+              }
+            }
+
+            h3 {
+              font-style: normal;
+              font-weight: 400;
+              font-size: 24px;
+            }
+
+            .square_discount {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 100px;
+              background: linear-gradient(
+                90deg,
+                rgba(248, 72, 61, 1) 53%,
+                rgba(225, 41, 111, 1) 100%
+              );
+
+              h3 {
+                color: $white_color;
+                font-size: 24px;
+              }
+            }
+          }
+
+          .right {
+            h1 {
+              font-style: normal;
+              font-weight: 400;
+              font-size: 40px;
+
+              p {
+                color: $secondary_color;
+              }
+              span {
+                color: $black_color;
+              }
+            }
+          }
+        }
+        .special_item_two {
+          border: 1px solid #dedede;
+          padding: 15px;
+        }
+      }
+    }
+  }
+}
+
+.grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.active {
+  color: $primary_color !important;
+  border-bottom: 2px solid $primary_color !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+#loading {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
   }
 }

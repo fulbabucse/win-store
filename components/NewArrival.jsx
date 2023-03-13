@@ -8,7 +8,7 @@ const NewArrival = ({ products }) => {
         New <span>Arrival</span>
       </h1>
 
-      <div className="arrival_grid">
+      <div className="grid">
         {products?.slice(0, 10)?.map((product) => (
           <Product product={product} key={product.id} />
         ))}
