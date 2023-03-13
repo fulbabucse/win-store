@@ -1,0 +1,338 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+// color variables
+$primary_color: #15adb9;
+$secondary_color: #14b1f0;
+$ternary_color: #03484d;
+$white_color: #fff;
+$black_color: #000;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.hero_container {
+  .banner {
+    position: relative;
+
+    .banner_image {
+      height: 50vh;
+      background-image: url("../assets/hero-banner.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 0 61px;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+      justify-content: space-between;
+      justify-items: center;
+      align-content: space-between;
+      align-items: center;
+
+      .banner_left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+
+        .banner_title {
+          color: #000;
+          font-size: 57px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 53px;
+
+          span {
+            color: $primary_color;
+          }
+        }
+
+        .banner_subtitle {
+          color: $black_color;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 25px;
+          text-transform: capitalize;
+        }
+
+        .banner_button {
+          font-size: 15px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 15px 40px;
+          gap: 10px;
+          width: 152px;
+          height: 40px;
+          background: $secondary_color;
+          border-radius: 5px;
+          color: $white_color;
+          border: 0;
+          cursor: pointer;
+        }
+      }
+
+      .banner_right {
+        width: 165px;
+        height: 159px;
+        background: linear-gradient(
+          90deg,
+          rgba(253, 200, 48, 1) 53%,
+          rgba(253, 220, 48, 1) 100%
+        );
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+          color: $white_color;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 42px;
+        }
+      }
+    }
+  }
+
+  .banner-icons {
+    position: absolute;
+    bottom: 15px;
+    left: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .active {
+      width: 35px;
+      height: 8px;
+      background-color: #034e53;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .unActive {
+      width: 35px;
+      height: 8px;
+      background-color: #aa9393;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .category_section {
+    position: relative;
+    padding: 0 61px;
+    background: linear-gradient(
+      180deg,
+      #f3edc9 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+    .left_arrow {
+      position: absolute;
+      top: 40%;
+      left: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .right_arrow {
+      position: absolute;
+      top: 40%;
+      right: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    .category_grid {
+      border-bottom: 2px solid #d4d4d4;
+      padding-bottom: 30px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+  }
+}
+
+.category_container {
+  position: relative;
+
+  .category_thumb {
+    width: 100%;
+  }
+
+  .category_details {
+    position: absolute;
+    left: -10px;
+    background-color: $white_color;
+    width: 100%;
+    bottom: 15px;
+    padding: 10px 16px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .category_name {
+        color: $black_color;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        text-transform: capitalize;
+      }
+
+      .category_link {
+        color: $secondary_color;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.arrival_container {
+  margin-top: 65px;
+  padding: 0 61px;
+
+  .title {
+    color: $secondary_color;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 34px;
+    text-transform: capitalize;
+
+    span {
+      color: $black_color;
+    }
+  }
+
+  .arrival_grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+}
+
+.product_container {
+  border: 1px solid #dedede;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
+
+  .product_top_details {
+    h4 {
+      color: $black_color;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 30px;
+      text-transform: capitalize;
+    }
+
+    h3 {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18px;
+      color: #034e53;
+    }
+  }
+
+  .product_thumb {
+    display: flex;
+    justify-content: center;
+  }
+
+  .product_button_details {
+    h4 {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 30px;
+
+      del {
+        color: #697475;
+      }
+
+      span {
+        color: $primary_color;
+      }
+    }
+
+    .product_button {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      color: $white_color;
+      background-color: $primary_color;
+      border: 0;
+      width: 100%;
+      padding: 10px 0px;
+      cursor: pointer;
+    }
+  }
+}
+
+.best_deals_container {
+  margin-top: 65px;
+  padding: 0 61px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .title {
+    color: $secondary_color;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 34px;
+    text-transform: capitalize;
+
+    span {
+      color: $black_color;
+    }
+  }
+
+  .category {
+    ul {
+      display: flex;
+      gap: 25px;
+
+      li {
+        list-style: none;
+
+        a {
+          color: $black_color;
+          font-size: 19px;
+          text-decoration: none;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}
