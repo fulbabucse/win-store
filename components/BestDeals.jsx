@@ -2,6 +2,9 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import watch from "../assets/watch.png";
 import laptop1 from "../assets/laptop-01.png";
+import laptop2 from "../assets/laptop-02.png";
+import earbuds from "../assets/earbuds.png";
+import fashions from "../assets/women-dress.png";
 import Product from "./Product";
 
 const BestDeals = ({ categories }) => {
@@ -107,9 +110,83 @@ const BestDeals = ({ categories }) => {
                   <Image src={laptop1} />
                 </div>
               </div>
-              <div className="special_item_two">hello2</div>
+              <div className="special_item_two">
+                <div className="left">
+                  <h1>
+                    <p>Special</p>
+                    <span>Offer</span>
+                  </h1>
+                  <h3>Earphones</h3>
+
+                  <h4>
+                    <span>BDT: 12,790</span>
+                    <del>BDT: 14,790</del>
+                  </h4>
+                  <p>
+                    <span>Already Sold: 6</span> <br />
+                    <span>Available: 30</span>
+                  </p>
+                </div>
+                <div className="right">
+                  <div className="circle">
+                    <h3>
+                      Save <br /> 10%
+                    </h3>
+                  </div>
+                  <Image src={earbuds} />
+                </div>
+              </div>
             </div>
-            <div>hello 2</div>
+            <div className="third_item">
+              <div className="special_item_one">
+                <div className="special_discount">
+                  <h1>
+                    <p>Special</p>
+                    <span>Offer</span>
+                  </h1>
+                  <div className="circle">
+                    <h1>
+                      40% <br /> Off
+                    </h1>
+                  </div>
+                </div>
+                <div className="offer_thumb">
+                  <Image src={laptop2} />
+                </div>
+                <div className="offer_details">
+                  <h3 className="offer_title">Best Laptop's</h3>
+                  <h4 className="offer_price">
+                    <span>BDT: 12,790</span>
+                    <del>BDT: 14,790</del>
+                  </h4>
+                  <p>
+                    <span>Already sold: 06</span>
+                    <span>Available: 30</span>
+                  </p>
+                </div>
+              </div>
+              <div className="special_item_two">
+                <div className="left">
+                  <h3>Special Laptop's</h3>
+                  <h4>
+                    <span>BDT: 12,790</span>
+                    <del>BDT: 14,790</del>
+                  </h4>
+                  <div className="square_discount">
+                    <h3>
+                      Save <br /> 10%
+                    </h3>
+                  </div>
+                </div>
+                <div className="right">
+                  <h1>
+                    <p>Special</p>
+                    <span>Offer</span>
+                  </h1>
+                  <Image src={fashions} />
+                </div>
+              </div>
+            </div>
           </div>
         ) : (
           <div className="grid">
