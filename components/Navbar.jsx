@@ -33,7 +33,7 @@ const Navbar = ({ categories }) => {
                   <select name="category" id="">
                     <option value="All Categories">All Categories</option>
                     {categories?.map((category) => (
-                      <option value={category}>{category}</option>
+                      <option value={category} key={category}>{category}</option>
                     ))}
                   </select>
                 </div>
@@ -156,7 +156,7 @@ const Navbar = ({ categories }) => {
                 <select name="category" id="">
                   <option value="All Categories">All Categories</option>
                   {categories?.map((category) => (
-                    <option value={category}>{category}</option>
+                    <option value={category} key={category}>{category}</option>
                   ))}
                 </select>
               </div>

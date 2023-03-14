@@ -1,15 +1,25 @@
 import React from "react";
 import electronics from "../assets/electronics.png";
-import appliences from "../assets/appliences.png";
-import babiesStore from "../assets/babies-store.png";
-import fashions from "../assets/fashions.png";
+import menClothes from "../assets/men_clothes.jpg";
+import womenClothes from "../assets/women_clothes.jpg";
+import jewelry from "../assets/jewelry.jpg";
 import Image from "next/image";
 import Link from "next/link";
 
 const Category = ({ category }) => {
   return (
     <div className="category_container">
-      <Image src={electronics} alt="Electronics" className="category_thumb" />
+      <div className="category_thumb">
+        <Image
+          src={
+            (category === "electronics" && electronics) ||
+            (category === "jewelery" && jewelry) ||
+            (category === "men's clothing" && menClothes) ||
+            (category === "women's clothing" && womenClothes)
+          }
+          alt="Electronics"
+        />
+      </div>
       <div className="category_details">
         <div>
           <h1 className="category_name">{category}</h1>

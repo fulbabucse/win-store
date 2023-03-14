@@ -1,3 +1,202 @@
+@mixin container {
+  margin-top: 65px;
+  padding: 0 61px;
+}
+
+@mixin sidebar($w, $col) {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: $w;
+  min-height: 100vh;
+  background: $col;
+  font-size: 0.65em;
+  z-index: 999;
+}
+
+@mixin bannerButton($bg, $col) {
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 40px;
+  gap: 10px;
+  width: 152px;
+  height: 40px;
+  background: $bg;
+  border-radius: 5px;
+  color: $col;
+  border: 0;
+  cursor: pointer;
+}
+
+@mixin circle($col, $h, $w) {
+  width: $w;
+  height: $h;
+  background: $col;
+  border-radius: 100%;
+}
+
+@mixin square($h, $w, $col) {
+  width: $w;
+  height: $h;
+  background: $col;
+}
+
+@mixin closeBtn($col) {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  .icon {
+    color: $col;
+  }
+}
+
+@mixin nav {
+  position: relative;
+  margin: 0 15%;
+  text-align: right;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin navAfter($bg, $bgc) {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0.1em;
+  background: $bg;
+  left: 0;
+  bottom: 0;
+  background-color: $bgc;
+}
+
+@mixin bannerImage($py, $px) {
+  background-image: url("../assets/hero-banner.png");
+  height: 50vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: $py $px;
+}
+
+@mixin grid($item, $space) {
+  display: grid;
+  grid-template-columns: repeat($item, 1fr);
+  gap: $space;
+}
+
+@mixin link($lh, $fs, $col) {
+  text-decoration: none;
+  color: $col;
+  font-style: normal;
+  font-weight: 400;
+  font-size: $fs;
+  line-height: $lh;
+}
+
+@mixin flexGap($gp) {
+  display: flex;
+  gap: $gp;
+}
+
+@mixin flex($gp) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $gp;
+}
+
+@mixin flexOutGap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin categorySelect {
+  select {
+    padding: 10px 10px;
+    border: 0;
+    cursor: pointer;
+    text-transform: capitalize;
+    border-radius: 5px 0px 0px 5px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+@mixin searchButton($col) {
+  background-color: #b6b6b6;
+  border: 0;
+  padding: 3.5px 8px;
+  cursor: pointer;
+  border-radius: 0px 5px 5px 0px;
+  margin-left: -2px;
+
+  .icon {
+    font-size: 28px;
+    color: $col;
+  }
+}
+
+@mixin dropdownList() {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+
+  .dropdown_icon {
+    color: $white_color;
+    font-size: 20px;
+  }
+
+  .dropdown_button {
+    background: transparent;
+    border: 0;
+    color: $white_color;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  a {
+    text-decoration: none;
+    color: $white_color;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+  }
+}
+
+@mixin footerTop($py, $px, $col, $mt) {
+  background-color: #393939;
+  padding: $py $px;
+  color: $col;
+  margin-top: $mt;
+}
+
+@mixin footerBottom($p, $h, $col) {
+  background-color: $col;
+  padding: 0 $p;
+  height: $h;
+  display: flex;
+  align-items: center;
+}
+
 @mixin mobile {
   @media (max-width: 600px) {
     @content;
