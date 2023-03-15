@@ -258,7 +258,7 @@ $black_color: #000;
     .banner-icons {
       position: absolute;
       bottom: 15px;
-      left: 45%;
+      left: 35%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -290,32 +290,6 @@ $black_color: #000;
         #f3edc9 0%,
         rgba(255, 255, 255, 0) 100%
       );
-
-      .left_arrow {
-        position: absolute;
-        top: 40%;
-        left: 20px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-      }
-
-      .right_arrow {
-        position: absolute;
-        top: 40%;
-        right: 20px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-      }
-
-      // .category_grid {
-      //   border-bottom: 2px solid #d4d4d4;
-      //   padding-bottom: 30px;
-      //   display: grid;
-      //   grid-template-columns: repeat(4, 1fr);
-      //   gap: 30px;
-      // }
     }
   }
 
@@ -694,30 +668,6 @@ $black_color: #000;
         #f3edc9 0%,
         rgba(255, 255, 255, 0) 100%
       );
-
-      .left_arrow {
-        position: absolute;
-        top: 40%;
-        left: 20px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-      }
-
-      .right_arrow {
-        position: absolute;
-        top: 40%;
-        right: 20px;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-      }
-
-      // .category_grid {
-      //   border-bottom: 2px solid #d4d4d4;
-      //   padding-bottom: 30px;
-      //   @include grid(4, 30px);
-      // }
     }
   }
 

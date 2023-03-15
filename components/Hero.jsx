@@ -5,6 +5,24 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+function SampleNextArrow(props) {
+  const { onClick } = props;
+  return (
+    <button className="right_arrow" onClick={onClick}>
+      <MdArrowForwardIos size={30} />
+    </button>
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { onClick } = props;
+  return (
+    <button className="left_arrow" onClick={onClick}>
+      <MdArrowBackIos size={30} />
+    </button>
+  );
+}
+
 const Hero = ({ categories }) => {
   let settings = {
     dots: true,
@@ -12,6 +30,8 @@ const Hero = ({ categories }) => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
@@ -76,9 +96,9 @@ const Hero = ({ categories }) => {
         </div>
       </div>
       <div className="category_section">
-        <button className="left_arrow">
+        {/* <button className="left_arrow">
           <MdArrowBackIos size={30} />
-        </button>
+        </button> */}
         <div className="category_grid">
           <Slider {...settings}>
             {categories?.map((category, i) => (
@@ -86,9 +106,9 @@ const Hero = ({ categories }) => {
             ))}
           </Slider>
         </div>
-        <button className="right_arrow">
+        {/* <button className="right_arrow">
           <MdArrowForwardIos size={30} />
-        </button>
+        </button> */}
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import BestDeals from "@/components/BestDeals";
 import Hero from "@/components/Hero";
 import NewArrival from "@/components/NewArrival";
+import axios from "axios";
 import Head from "next/head";
 
 export default function Home({ categories, products }) {
@@ -21,11 +22,15 @@ export default function Home({ categories, products }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://fakestoreapi.com/products/categories");
-  const categories = await res.json();
+  // Get All Categories
+  const { data: categories } = await axios.get(
+    "https://fakestoreapi.com/products/categories"
+  );
 
-  const response = await fetch("https://fakestoreapi.com/products");
-  const products = await response.json();
+  // Get All Products
+  const { data: products } = await axios.get(
+    "https://fakestoreapi.com/products"
+  );
 
   return {
     props: {
