@@ -96,9 +96,6 @@ const Hero = ({ categories }) => {
         </div>
       </div>
       <div className="category_section">
-        {/* <button className="left_arrow">
-          <MdArrowBackIos size={30} />
-        </button> */}
         <div className="category_grid">
           <Slider {...settings}>
             {categories?.map((category, i) => (
@@ -106,9 +103,6 @@ const Hero = ({ categories }) => {
             ))}
           </Slider>
         </div>
-        {/* <button className="right_arrow">
-          <MdArrowForwardIos size={30} />
-        </button> */}
       </div>
     </div>
   );
