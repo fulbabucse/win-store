@@ -379,7 +379,7 @@ $black_color: #000;
           .special_discount {
             .circle {
               position: absolute;
-              right: 10px;
+              right: 80px;
               top: 15px;
             }
           }
@@ -390,6 +390,160 @@ $black_color: #000;
 
             img {
               height: 100%;
+            }
+          }
+        }
+
+        .third_item {
+          position: relative;
+          @include flexGap(15px);
+          justify-content: center;
+          flex-direction: column;
+
+          .special_item_one {
+            border: 1px solid #dedede;
+            padding: 15px;
+
+            .special_discount {
+              h1 {
+                position: absolute;
+                left: 15px;
+                top: 15px;
+                font-style: normal;
+                font-weight: 400;
+
+                p {
+                  color: #d22727;
+                }
+                span {
+                  color: $black_color;
+                }
+              }
+
+              .circle {
+                right: 80px;
+                top: 15px;
+                @include circle(
+                  linear-gradient(
+                    90deg,
+                    rgba(239, 158, 31, 1) 53%,
+                    rgba(237, 211, 82, 1) 100%
+                  ),
+                  120px,
+                  120px
+                );
+
+                h1 {
+                  color: $white_color;
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 30px;
+                }
+              }
+            }
+
+            .offer_thumb {
+              @include flexOutGap;
+            }
+
+            .offer_details {
+              .offer_title {
+                color: $black_color;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+              }
+
+              .offer_price {
+                font-style: normal;
+                font-weight: 400;
+                line-height: 30px;
+                display: flex;
+                gap: 24px;
+
+                span {
+                  font-size: 18px;
+                  color: #d22727;
+                }
+
+                del {
+                  font-size: 14px;
+                }
+              }
+              p {
+                color: $primary_color;
+                display: flex;
+                align-items: center;
+                gap: 40px;
+              }
+            }
+          }
+          .special_item_two {
+            border: 1px solid #dedede;
+            padding: 15px;
+            @include grid(2, 20px);
+
+            .left {
+              @include flexGap(10px);
+              flex-direction: column;
+
+              h4 {
+                display: flex;
+                flex-direction: column;
+
+                span {
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 20px;
+                  color: $primary_color;
+                }
+
+                del {
+                  font-style: normal;
+                  font-weight: 400;
+                  font-size: 16px;
+                  color: $black_color;
+                }
+              }
+
+              h3 {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+              }
+
+              .square_discount {
+                @include flexOutGap;
+                @include square(
+                  100px,
+                  100px,
+                  linear-gradient(
+                    90deg,
+                    rgba(224, 187, 198, 1) 53%,
+                    rgba(192, 190, 203, 1) 100%
+                  )
+                );
+
+                h3 {
+                  color: $black_color;
+                  font-size: 24px;
+                }
+              }
+            }
+
+            .right {
+              h1 {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 40px;
+
+                p {
+                  color: $secondary_color;
+                }
+                span {
+                  color: $black_color;
+                }
+              }
             }
           }
         }
