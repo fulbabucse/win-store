@@ -122,7 +122,7 @@ const Navbar = () => {
               <ul>
                 {categories?.map((category) => (
                   <li key={category} onClick={() => setOpen(!open)}>
-                    <Link href={category}>{category}</Link>
+                    <Link href={`/category/${category}`}>{category}</Link>
                   </li>
                 ))}
               </ul>
