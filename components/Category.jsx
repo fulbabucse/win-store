@@ -23,7 +23,7 @@ const Category = ({ category }) => {
       <div className="category_details">
         <div>
           <h1 className="category_name">{category}</h1>
-          <Link href="/" className="category_link">
+          <Link href={`/category/${category}`} className="category_link">
             Shop
           </Link>
         </div>

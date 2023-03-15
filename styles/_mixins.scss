@@ -15,7 +15,7 @@
   z-index: 999;
 }
 
-@mixin bannerButton($bg, $col) {
+@mixin primaryButton($bg, $col) {
   font-size: 15px;
   display: flex;
   flex-direction: column;
@@ -30,6 +30,18 @@
   color: $col;
   border: 0;
   cursor: pointer;
+
+  &:hover {
+    background: darken($bg, 5%);
+  }
+}
+
+@mixin productDetails($fs, $fw) {
+  text-transform: capitalize;
+  font-size: $fs;
+  font-style: normal;
+  font-weight: $fw;
+  text-align: center;
 }
 
 @mixin circle($col, $h, $w) {

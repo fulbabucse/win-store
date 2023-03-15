@@ -197,6 +197,7 @@
 
           span {
             color: $primary_color;
+            margin-left: 5px;
           }
         }
 
@@ -210,7 +211,7 @@
         }
 
         .banner_button {
-          @include bannerButton($secondary_color, $white_color);
+          @include primaryButton($secondary_color, $white_color);
         }
       }
 
@@ -286,21 +287,22 @@
       cursor: pointer;
     }
 
-    .category_grid {
-      border-bottom: 2px solid #d4d4d4;
-      padding-bottom: 30px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 30px;
-    }
+    // .category_grid {
+    //   border-bottom: 2px solid #d4d4d4;
+    //   padding-bottom: 30px;
+    //   display: grid;
+    //   grid-template-columns: repeat(4, 1fr);
+    //   gap: 30px;
+    // }
   }
 }
 
 .category_container {
   position: relative;
+  margin-left: 25px;
 
   .category_thumb {
-    width: 276px;
+    width: 100%;
     height: 203px;
 
     img {
@@ -357,14 +359,19 @@
   flex-direction: column;
   justify-content: space-between;
 
-  .product_top_details {
-    h4 {
-      @include link(30px, 13px, $black_color);
-      text-transform: capitalize;
-    }
+  a {
+    text-decoration: none;
 
-    h3 {
-      @include link(18px, 16px, #034e53);
+    .product_top_details {
+      margin-bottom: 25px;
+      h4 {
+        @include link(30px, 13px, $black_color);
+        text-transform: capitalize;
+      }
+
+      h3 {
+        @include link(18px, 16px, #034e53);
+      }
     }
   }
 
@@ -401,6 +408,48 @@
       cursor: pointer;
     }
   }
+}
+
+.single_product_container {
+  margin: 20px 130px;
+  @include grid(2, 28px);
+  place-content: center;
+
+  .product {
+    border: 3px solid $primary_color;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    .title {
+      @include productDetails(20px, 500);
+    }
+    .category {
+      @include productDetails(15px, 400);
+
+      span {
+        color: $primary_color;
+      }
+    }
+    .desc {
+      @include productDetails(14px, 400);
+    }
+    .price {
+      @include productDetails(28px, 500);
+      color: #697475;
+    }
+
+    .buy-now {
+      @include primaryButton($secondary_color, $white_color);
+    }
+  }
+}
+
+.category_product_container {
+  padding: 16px;
 }
 
 .best_deals_container {
@@ -891,7 +940,7 @@
 
     .payment_methods {
       display: flex;
-      justify-content: end;
+      justify-content: flex-end;
 
       div {
         @include flexGap(15px);
@@ -1161,7 +1210,7 @@
           }
 
           .banner_button {
-            @include bannerButton($secondary_color, $white_color);
+            @include primaryButton($secondary_color, $white_color);
           }
         }
 
@@ -1237,14 +1286,24 @@
         cursor: pointer;
       }
 
-      .category_grid {
-        border-bottom: 2px solid #d4d4d4;
-        padding-bottom: 30px;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 30px;
-      }
+      // .category_grid {
+      //   border-bottom: 2px solid #d4d4d4;
+      //   padding-bottom: 30px;
+      //   display: grid;
+      //   grid-template-columns: repeat(4, 1fr);
+      //   gap: 30px;
+      // }
     }
+  }
+
+  .category_container {
+    margin-left: 10px;
+  }
+
+  .single_product_container {
+    margin: 20px 50px;
+    @include grid(1, 20px);
+    place-content: center;
   }
 
   .arrival_container {
@@ -1548,7 +1607,7 @@
           }
 
           .banner_button {
-            @include bannerButton($secondary_color, $white_color);
+            @include primaryButton($secondary_color, $white_color);
           }
         }
 
@@ -1621,11 +1680,11 @@
         cursor: pointer;
       }
 
-      .category_grid {
-        border-bottom: 2px solid #d4d4d4;
-        padding-bottom: 30px;
-        @include grid(4, 30px);
-      }
+      // .category_grid {
+      //   border-bottom: 2px solid #d4d4d4;
+      //   padding-bottom: 30px;
+      //   @include grid(4, 30px);
+      // }
     }
   }
 
@@ -1703,6 +1762,12 @@
     @include grid(3, 10px);
   }
 
+  .single_product_container {
+    margin: 20px 20px;
+    @include grid(2, 10px);
+    place-content: center;
+  }
+
   .footer_container {
     .footer_top {
       @include footerTop(30px, 61px, $white_color, 61px);
@@ -1747,7 +1812,7 @@
 
       .payment_methods {
         display: flex;
-        justify-content: end;
+        justify-content: flex-end;
 
         div {
           @include flexGap(15px);

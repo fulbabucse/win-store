@@ -1,8 +1,50 @@
 import React from "react";
 import Category from "./Category";
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Hero = ({ categories }) => {
+  let settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <div className="hero_container">
       <div className="banner">
@@ -38,9 +80,11 @@ const Hero = ({ categories }) => {
           <MdArrowBackIos size={30} />
         </button>
         <div className="category_grid">
-          {categories?.map((category, i) => (
-            <Category key={i} category={category} />
-          ))}
+          <Slider {...settings}>
+            {categories?.map((category, i) => (
+              <Category key={i} category={category} />
+            ))}
+          </Slider>
         </div>
         <button className="right_arrow">
           <MdArrowForwardIos size={30} />

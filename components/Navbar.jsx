@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import cart from "../assets/shopping-cart.png";
 import {
@@ -14,26 +14,39 @@ import { MdOutlineFavoriteBorder } from "react-icons/md";
 import Link from "next/link";
 import { FaBars, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
-const Navbar = ({ categories }) => {
+const Navbar = () => {
+  const [categories, setCategories] = useState([]);
   const [open, setOpen] = useState(false);
   const handleSearch = (e) => {
     e.preventDefault();
   };
+
+  const fetchCategories = async () => {
+    const res = await fetch("https://fakestoreapi.com/products/categories");
+    const data = await res.json();
+    setCategories(data);
+  };
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
   return (
     <div>
       <div className="navbar_container">
         <div className="top_navbar">
           <div className="top_nav_left">
-            <div className="logo">
+            <Link href="/" className="logo">
               <Image src={logo} alt="Logo" />
-            </div>
+            </Link>
             <div>
               <form onSubmit={handleSearch} className="search_field">
                 <div className="category_select">
                   <select name="category" id="">
                     <option value="All Categories">All Categories</option>
                     {categories?.map((category) => (
-                      <option value={category} key={category}>{category}</option>
+                      <option value={category} key={category}>
+                        {category}
+                      </option>
                     ))}
                   </select>
                 </div>
@@ -156,7 +169,9 @@ const Navbar = ({ categories }) => {
                 <select name="category" id="">
                   <option value="All Categories">All Categories</option>
                   {categories?.map((category) => (
-                    <option value={category} key={category}>{category}</option>
+                    <option value={category} key={category}>
+                      {category}
+                    </option>
                   ))}
                 </select>
               </div>

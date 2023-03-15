@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import watch from "../assets/watch.png";
 import laptop1 from "../assets/laptop-01.png";
 import laptop2 from "../assets/laptop-02.png";
@@ -7,21 +7,11 @@ import earbuds from "../assets/earbuds.png";
 import fashions from "../assets/women-dress.png";
 import Product from "./Product";
 
-const BestDeals = ({ categories }) => {
+const BestDeals = ({ categories, products }) => {
   const [getCategory, setGetCategory] = useState("specials");
-  const [products, setProducts] = useState([]);
-
-  const fetchProducts = async () => {
-    const res = await fetch(
-      `https://fakestoreapi.com/products/category/${getCategory}`
-    );
-    const data = await res.json();
-    setProducts(data);
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, [getCategory]);
+  const filteredProducts = products?.filter(
+    (product) => product?.category === getCategory
+  );
 
   return (
     <div className="best_deals_container">
@@ -74,7 +64,7 @@ const BestDeals = ({ categories }) => {
                 </div>
               </div>
               <div className="offer_thumb">
-                <Image src={watch} />
+                <Image src={watch} alt="offer thumb" />
               </div>
               <div className="offer_details">
                 <h3 className="offer_title">Special Watch for Men's</h3>
@@ -107,7 +97,7 @@ const BestDeals = ({ categories }) => {
                     <p>Special</p>
                     <span>Offer</span>
                   </h1>
-                  <Image src={laptop1} />
+                  <Image src={laptop1} alt="laptop" />
                 </div>
               </div>
               <div className="special_item_two">
@@ -133,7 +123,7 @@ const BestDeals = ({ categories }) => {
                       Save <br /> 10%
                     </h3>
                   </div>
-                  <Image src={earbuds} />
+                  <Image src={earbuds} alt="earbuds"/>
                 </div>
               </div>
             </div>
@@ -151,7 +141,7 @@ const BestDeals = ({ categories }) => {
                   </div>
                 </div>
                 <div className="offer_thumb">
-                  <Image src={laptop2} />
+                  <Image src={laptop2} alt="laptop thumb"/>
                 </div>
                 <div className="offer_details">
                   <h3 className="offer_title">Best Laptop's</h3>
@@ -183,14 +173,14 @@ const BestDeals = ({ categories }) => {
                     <p>Special</p>
                     <span>Offer</span>
                   </h1>
-                  <Image src={fashions} />
+                  <Image src={fashions} alt="fashion"/>
                 </div>
               </div>
             </div>
           </div>
         ) : (
           <div className="grid">
-            {products?.map((product) => (
+            {filteredProducts?.map((product) => (
               <Product product={product} key={product.id} />
             ))}
           </div>

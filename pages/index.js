@@ -1,7 +1,5 @@
 import BestDeals from "@/components/BestDeals";
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import Navbar from "@/components/Navbar";
 import NewArrival from "@/components/NewArrival";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
@@ -15,11 +13,9 @@ export default function Home({ categories, products }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className={styles.main}>
-        <Navbar categories={categories} />
         <Hero categories={categories} />
         <NewArrival products={products} />
-        <BestDeals categories={categories} />
-        <Footer />
+        <BestDeals categories={categories} products={products} />
       </main>
     </>
   );

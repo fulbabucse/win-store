@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="footer_nav">
           <div className="company_info">
             <Link href="/">
-              <Image src={logo} />
+              <Image src={logo} alt="logo" />
             </Link>
             <h1 className="title">Get question? Call Us 24/7!</h1>
             <p className="contact_number">
@@ -112,10 +112,10 @@ const Footer = () => {
         </div>
         <div className="payment_methods">
           <div>
-            <Image src={visa} />
-            <Image src={masterCard} />
-            <Image src={cash} />
-            <Image src={easyInstallment} />
+            <Image src={visa} alt="payment method" />
+            <Image src={masterCard} alt="payment method" />
+            <Image src={cash} alt="payment method" />
+            <Image src={easyInstallment} alt="payment method" />
           </div>
         </div>
       </div>
