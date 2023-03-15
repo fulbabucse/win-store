@@ -38,7 +38,7 @@ $black_color: #000;
 
       a {
         @include link(20px, 16px, rgba(#fff, 0.5));
-        text-transform: capitalize;
+        text-transform: capitalize !important;
         letter-spacing: 2px;
         display: block;
         transition: all ease-out 300ms;
