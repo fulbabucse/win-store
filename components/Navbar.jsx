@@ -135,9 +135,9 @@ const Navbar = () => {
         <div className="top_navbar">
           <div className="top_navbar_one">
             <div className="top_nav_left">
-              <div className="logo">
+              <Link href="/" className="logo">
                 <Image src={logo} alt="Logo" />
-              </div>
+              </Link>
             </div>
             <div className="top_nav_right">
               <div className="contact">

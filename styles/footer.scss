@@ -1,0 +1,109 @@
+// Imports from Another
+@import "globals.scss";
+@import "mixins";
+@import "responsive.scss";
+
+// color variables
+$primary_color: #15adb9;
+$secondary_color: #14b1f0;
+$ternary_color: #03484d;
+$white_color: #fff;
+$black_color: #000;
+
+// Footer Container
+.footer_container {
+  // Footer Top Company, contact, trending
+  .footer_top {
+    @include footerTop(15px, 61px, $white_color, 30px);
+
+    .footer_nav {
+      @include grid(4, 20px);
+      place-items: center;
+
+      .company_info {
+        @include flexGap(10px);
+        flex-direction: column;
+
+        .contact_number {
+          a {
+            @include link(17px, 15px, $white_color);
+            text-decoration: none;
+          }
+        }
+
+        .title {
+          @include link(17px, 18px, $primary_color);
+        }
+
+        a {
+          @include link(17px, 15px, $white_color);
+        }
+
+        // Social Icons
+        .social_icons {
+          @include flexGap(10px);
+
+          .icon {
+            font-size: 25px;
+            cursor: pointer;
+
+            &:hover {
+              color: $secondary_color;
+              transition: all 0.3s;
+            }
+          }
+        }
+      }
+    }
+
+    // Footer Payment methods Images
+    .payment_methods {
+      display: flex;
+      justify-content: flex-end;
+
+      div {
+        @include flexGap(15px);
+        align-items: center;
+      }
+    }
+  }
+
+  // Footer Copyrights
+  .footer_bottom {
+    @include footerBottom(61px, 59px, $black_color);
+
+    p {
+      color: $white_color;
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
+}
+
+// Footer Title
+.footer_title {
+  color: $primary_color;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+// Footer Anchor links
+.footer_link {
+  margin-top: 15px;
+
+  li {
+    list-style-type: none;
+
+    a {
+      border-bottom: 1px solid transparent;
+      @include link(24px, 13px, $white_color);
+
+      &:hover {
+        color: $secondary_color;
+        border-bottom: 1px solid $secondary_color;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+}

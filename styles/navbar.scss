@@ -1,0 +1,189 @@
+// Imports form Another
+@import "globals.scss";
+@import "mixins";
+@import "responsive.scss";
+
+// color variables
+$primary_color: #15adb9;
+$secondary_color: #14b1f0;
+$ternary_color: #03484d;
+$white_color: #fff;
+$black_color: #000;
+
+// Navbar Container
+.navbar_container {
+  position: relative;
+
+  // Sidebar for categories
+  .sidebar {
+    @include sidebar(25%, $secondary_color);
+
+    // Close sidebar button
+    .close {
+      @include closeBtn($white_color);
+    }
+  }
+
+  .nav {
+    @include nav;
+  }
+
+  // Navbar all lists
+  .nav ul {
+    list-style: none;
+
+    li {
+      position: relative;
+      margin: 3.2em 0;
+
+      a {
+        @include link(20px, 16px, rgba(#fff, 0.5));
+        text-transform: capitalize;
+        letter-spacing: 2px;
+        display: block;
+        transition: all ease-out 300ms;
+      }
+
+      &.active a {
+        color: white;
+      }
+
+      &:not(.active)::after {
+        opacity: 0.2;
+      }
+
+      &:not(.active):hover a {
+        color: rgba(#fff, 0.75);
+      }
+
+      &::after {
+        @include navAfter($black_color, $white_color);
+      }
+    }
+  }
+
+  // Top navbar
+  .top_navbar {
+    background-color: #03484d;
+    padding: 10px 61px;
+    @include flexBetween;
+
+    // Navbar company logo nad Search
+    .top_nav_left {
+      @include flexGap(20px);
+      align-items: center;
+
+      // Search
+      .search_field {
+        display: flex;
+        align-items: center;
+
+        // Navbar select dropdown
+        .category_select {
+          @include categorySelect;
+        }
+
+        .input_field {
+          padding: 10px 10px;
+          width: 350px;
+          margin-left: -2px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        // Search button
+        .search_button {
+          @include searchButton($white_color);
+        }
+      }
+    }
+
+    // Top navbar right contact number, user icons, wishlist icons and cart
+    .top_nav_right {
+      color: $white_color;
+      font-weight: 400;
+      font-style: normal;
+      @include flexGap(20px);
+      align-items: center;
+
+      .contact {
+        small {
+          font-size: 12px;
+        }
+
+        p {
+          display: flex;
+          align-items: center;
+          gap: 2px;
+
+          span {
+            font-size: 15px;
+          }
+        }
+
+        .signIn_button {
+          color: $white_color;
+          background-color: transparent;
+          border: 0;
+          cursor: pointer;
+        }
+      }
+
+      .cart {
+        position: relative;
+
+        p {
+          position: absolute;
+          left: 10px;
+          bottom: 15px;
+          color: #fdde3b;
+        }
+
+        div {
+          display: flex;
+          align-items: center;
+          gap: 2px;
+        }
+      }
+    }
+  }
+
+  // Sub navbar
+  .sub_navbar {
+    height: 49px;
+    background-color: #0e3b3e;
+    padding: 10px 61px;
+    @include flexBetween;
+
+    .navbar_items {
+      ul {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        li {
+          @include dropdownList;
+        }
+      }
+    }
+
+    // Sub Navbar social icons
+    .social_icons {
+      display: flex;
+      gap: 10px;
+
+      .icon {
+        font-size: 25px;
+        cursor: pointer;
+        color: $white_color;
+
+        &:hover {
+          color: $secondary_color;
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+}

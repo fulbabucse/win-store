@@ -1,0 +1,459 @@
+// Imports from Another
+@import "globals.scss";
+@import "mixins";
+@import "responsive.scss";
+
+// color variables
+$primary_color: #15adb9;
+$secondary_color: #14b1f0;
+$ternary_color: #03484d;
+$white_color: #fff;
+$black_color: #000;
+
+// Best Deals
+.best_deals_container {
+  @include container;
+
+  // Category list for best deals
+  .category_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      @include link(34px, 28px, $secondary_color);
+      text-transform: capitalize;
+
+      span {
+        color: $black_color;
+      }
+    }
+
+    .category {
+      ul {
+        @include flexGap(25px);
+
+        li {
+          list-style: none;
+
+          button {
+            font-size: 18px;
+            color: $black_color;
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-transform: capitalize;
+            border-bottom: 2px solid transparent;
+          }
+        }
+      }
+    }
+  }
+
+  .display_category {
+    margin-top: 10px;
+
+    .special_offer_grid {
+      @include grid(3, 25px);
+
+      // First Item from Best Deals
+      .first_item {
+        position: relative;
+        border: 1px solid #dedede;
+        padding: 15px 20px;
+
+        .special_discount {
+          h1 {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-style: normal;
+            font-weight: 400;
+
+            p {
+              color: #d22727;
+            }
+            span {
+              color: $black_color;
+            }
+          }
+
+          .circle {
+            position: absolute;
+            right: 0;
+            top: 15px;
+            @include circle(
+              linear-gradient(
+                90deg,
+                rgba(248, 72, 61, 1) 53%,
+                rgba(225, 41, 111, 1) 100%
+              ),
+              120px,
+              120px
+            );
+
+            h1 {
+              color: $white_color;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 30px;
+            }
+          }
+        }
+
+        .offer_thumb {
+          @include flexOutGap;
+        }
+
+        .offer_details {
+          .offer_title {
+            color: $black_color;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 24px;
+          }
+
+          .offer_price {
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+            @include flexGap(24px);
+
+            span {
+              font-size: 18px;
+              color: #d22727;
+            }
+
+            del {
+              font-size: 14px;
+            }
+          }
+          p {
+            color: $primary_color;
+            align-items: center;
+            @include flexGap(40px);
+          }
+        }
+      }
+
+      // Second Item from Best Deals
+      .second_item {
+        position: relative;
+        @include flexGap(15px);
+        justify-content: center;
+        flex-direction: column;
+
+        .special_item_one {
+          border: 1px solid #dedede;
+          padding: 15px;
+          @include grid(2, 20px);
+
+          .left {
+            @include flexGap(10px);
+            flex-direction: column;
+
+            h4 {
+              display: flex;
+              flex-direction: column;
+
+              span {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                color: $secondary_color;
+              }
+
+              del {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                color: $black_color;
+              }
+            }
+
+            h3 {
+              font-style: normal;
+              font-weight: 400;
+              font-size: 24px;
+            }
+
+            .square_discount {
+              @include flexOutGap;
+              @include square(
+                100px,
+                100px,
+                linear-gradient(
+                  90deg,
+                  rgba(23, 210, 240, 1) 53%,
+                  rgba(119, 244, 175, 1) 100%
+                )
+              );
+
+              h3 {
+                color: $white_color;
+                font-size: 24px;
+              }
+            }
+          }
+
+          .right {
+            h1 {
+              font-style: normal;
+              font-weight: 400;
+              font-size: 40px;
+
+              p {
+                color: $secondary_color;
+              }
+              span {
+                color: $black_color;
+              }
+            }
+          }
+        }
+        .special_item_two {
+          border: 1px solid #dedede;
+          padding: 15px;
+          display: flex;
+          justify-content: space-between;
+
+          .left {
+            @include flexGap(10px);
+            flex-direction: column;
+
+            h1 {
+              font-style: normal;
+              font-weight: 400;
+              font-size: 40px;
+
+              p {
+                color: #d22727;
+              }
+
+              span {
+                font-style: normal;
+                font-weight: 400;
+                color: $black_color;
+              }
+            }
+
+            h3 {
+              font-style: normal;
+              font-weight: 400;
+              font-size: 24px;
+            }
+
+            h4 {
+              display: flex;
+              flex-direction: column;
+
+              span {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                color: $secondary_color;
+              }
+
+              del {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                color: $black_color;
+              }
+            }
+
+            p {
+              span {
+                color: $secondary_color;
+              }
+            }
+          }
+
+          .right {
+            @include flexOutGap;
+            flex-direction: column;
+
+            .circle {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              @include flexOutGap;
+              @include circle(
+                linear-gradient(
+                  90deg,
+                  rgba(240, 163, 173, 1) 53%,
+                  rgba(253, 212, 217, 1) 100%
+                ),
+                100px,
+                100px
+              );
+
+              h3 {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+
+      // Third Item from Best Deals
+      .third_item {
+        position: relative;
+        @include flexGap(15px);
+        justify-content: center;
+        flex-direction: column;
+
+        .special_item_one {
+          border: 1px solid #dedede;
+          padding: 15px;
+
+          .special_discount {
+            h1 {
+              position: absolute;
+              left: 15px;
+              top: 15px;
+              font-style: normal;
+              font-weight: 400;
+
+              p {
+                color: #d22727;
+              }
+              span {
+                color: $black_color;
+              }
+            }
+
+            .circle {
+              position: absolute;
+              right: 0;
+              top: 15px;
+              @include circle(
+                linear-gradient(
+                  90deg,
+                  rgba(239, 158, 31, 1) 53%,
+                  rgba(237, 211, 82, 1) 100%
+                ),
+                120px,
+                120px
+              );
+
+              h1 {
+                color: $white_color;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 30px;
+              }
+            }
+          }
+
+          .offer_thumb {
+            @include flexOutGap;
+          }
+
+          .offer_details {
+            .offer_title {
+              color: $black_color;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 24px;
+            }
+
+            .offer_price {
+              font-style: normal;
+              font-weight: 400;
+              line-height: 30px;
+              display: flex;
+              gap: 24px;
+
+              span {
+                font-size: 18px;
+                color: #d22727;
+              }
+
+              del {
+                font-size: 14px;
+              }
+            }
+            p {
+              color: $primary_color;
+              display: flex;
+              align-items: center;
+              gap: 40px;
+            }
+          }
+        }
+        .special_item_two {
+          border: 1px solid #dedede;
+          padding: 15px;
+          @include grid(2, 20px);
+
+          .left {
+            @include flexGap(10px);
+            flex-direction: column;
+
+            h4 {
+              display: flex;
+              flex-direction: column;
+
+              span {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                color: $primary_color;
+              }
+
+              del {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                color: $black_color;
+              }
+            }
+
+            h3 {
+              font-style: normal;
+              font-weight: 400;
+              font-size: 24px;
+            }
+
+            .square_discount {
+              @include flexOutGap;
+              @include square(
+                100px,
+                100px,
+                linear-gradient(
+                  90deg,
+                  rgba(224, 187, 198, 1) 53%,
+                  rgba(192, 190, 203, 1) 100%
+                )
+              );
+
+              h3 {
+                color: $black_color;
+                font-size: 24px;
+              }
+            }
+          }
+
+          .right {
+            h1 {
+              font-style: normal;
+              font-weight: 400;
+              font-size: 40px;
+
+              p {
+                color: $secondary_color;
+              }
+              span {
+                color: $black_color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

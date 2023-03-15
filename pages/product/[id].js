@@ -20,7 +20,6 @@ const SingleProduct = ({ product }) => {
       </span>
     );
   });
-  console.log(rating);
   return (
     <div className="single_product_container">
       <div className="product">
@@ -29,7 +28,19 @@ const SingleProduct = ({ product }) => {
       <div className="product">
         <h2 className="title">{title}</h2>
         <h5 className="category">
-          {category} <span>{ratingStar}</span>
+          {category}
+          <div>
+            <p style={{ marginRight: "5px" }}>
+              <span style={{ color: "#FEBD69", fontWeight: "600" }}>
+                {ratingStar}
+              </span>{" "}
+              ({rating?.rate})
+            </p>
+            <p>|</p>
+            <span>
+              <p>{rating?.count} reviews</p>
+            </span>
+          </div>
         </h5>
         <p className="desc">{description}</p>
         <h4 className="price">BDT {price}</h4>

@@ -1,8 +1,10 @@
+// container @mixins
 @mixin container {
   margin-top: 65px;
   padding: 0 61px;
 }
 
+// sidebar @mixins
 @mixin sidebar($w, $col) {
   position: fixed;
   left: 0;
@@ -15,6 +17,7 @@
   z-index: 999;
 }
 
+// primary all buttons @mixins
 @mixin primaryButton($bg, $col) {
   font-size: 15px;
   display: flex;
@@ -36,6 +39,7 @@
   }
 }
 
+// single product details @mixins
 @mixin productDetails($fs, $fw) {
   text-transform: capitalize;
   font-size: $fs;
@@ -44,6 +48,7 @@
   text-align: center;
 }
 
+// All Circle @mixins
 @mixin circle($col, $h, $w) {
   width: $w;
   height: $h;
@@ -51,12 +56,14 @@
   border-radius: 100%;
 }
 
+// All Square @mixins
 @mixin square($h, $w, $col) {
   width: $w;
   height: $h;
   background: $col;
 }
 
+// Close button @mixins
 @mixin closeBtn($col) {
   position: absolute;
   right: 15px;
@@ -70,6 +77,7 @@
   }
 }
 
+// Navbar @mixins
 @mixin nav {
   position: relative;
   margin: 0 15%;
@@ -89,6 +97,7 @@
   background-color: $bgc;
 }
 
+// Banner Image @mixins
 @mixin bannerImage($py, $px) {
   background-image: url("../assets/hero-banner.png");
   height: 50vh;
@@ -98,12 +107,14 @@
   padding: $py $px;
 }
 
+// Grid with gap @mixins
 @mixin grid($item, $space) {
-  display: grid;
-  grid-template-columns: repeat($item, 1fr);
-  gap: $space;
+  display: grid !important;
+  grid-template-columns: repeat($item, 1fr) !important;
+  gap: $space !important;
 }
 
+// All  link design @mixins
 @mixin link($lh, $fs, $col) {
   text-decoration: none;
   color: $col;
@@ -113,11 +124,13 @@
   line-height: $lh;
 }
 
+// Flex with Gap @mixins
 @mixin flexGap($gp) {
   display: flex;
   gap: $gp;
 }
 
+// Flex with all @mixins
 @mixin flex($gp) {
   display: flex;
   align-items: center;
@@ -125,18 +138,21 @@
   gap: $gp;
 }
 
+// Flex without gap @mixins
 @mixin flexOutGap {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+// Flex with between @mixins
 @mixin flexBetween {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+// Navbar Category Select dropdown @mixins
 @mixin categorySelect {
   select {
     padding: 10px 10px;
@@ -194,6 +210,7 @@
   }
 }
 
+// Footer Top @mixins
 @mixin footerTop($py, $px, $col, $mt) {
   background-color: #393939;
   padding: $py $px;
@@ -201,6 +218,7 @@
   margin-top: $mt;
 }
 
+// Footer Bottom @mixins
 @mixin footerBottom($p, $h, $col) {
   background-color: $col;
   padding: 0 $p;
@@ -209,24 +227,28 @@
   align-items: center;
 }
 
+// Mobile Device Size @mixins
 @mixin mobile {
   @media (max-width: 600px) {
     @content;
   }
 }
 
+// Medium Device Size @mixins
 @mixin medium {
   @media (min-width: 600px) and (max-width: 992px) {
     @content;
   }
 }
 
+// large Device Size @mixins
 @mixin large {
   @media (min-width: 993px) and (max-width: 1279px) {
     @content;
   }
 }
 
+// Extra large Device Size @mixins
 @mixin extraLarge {
   @media (min-width: 1280px) and (max-width: 1440px) {
     @content;

@@ -1,9 +1,14 @@
 import Layout from "@/components/Layout";
+import { Router } from "next/router";
 import Head from "next/head";
 import NProgress from "nprogress";
 import "@/styles/globals.scss";
-import "../styles/styles.scss";
-import { Router } from "next/router";
+import "../styles/bestDeals.scss";
+import "../styles/footer.scss";
+import "../styles/category.scss";
+import "../styles/navbar.scss";
+import "../styles/hero.scss";
+import "../styles/product.scss";
 
 export default function App({ Component, pageProps }) {
   NProgress.configure({ showSpinner: false });
