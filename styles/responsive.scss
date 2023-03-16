@@ -336,7 +336,7 @@ $black_color: #000;
     .category_top {
       display: flex;
       flex-direction: column;
-      align-items: start;
+      align-items: flex-start;
 
       .title {
         @include link(28px, 22px, $secondary_color);
